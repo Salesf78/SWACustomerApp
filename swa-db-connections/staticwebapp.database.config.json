@@ -9,9 +9,6 @@
       "enabled": true,
       "path": "/api"
     },
-    "host": {
-      "mode": "development"
-    }
   },
   "entities": {
     "Customer": {
