@@ -12,7 +12,7 @@ function App() {
   const [editId, setEditId] = useState(null);
 
   const loadCustomers = () => {
-    fetch("/data-api/Customer")
+    fetch("/data-api/api/Customer")
       .then(r => r.json())
       .then(data => setCustomers(data.value || []));
   };
@@ -23,7 +23,7 @@ function App() {
 
   const saveCustomer = async () => {
     if (editId) {
-      await fetch(`/data-api/Customer/CustomerID/${editId}`, {
+      await fetch(`/data-api/api/Customer/CustomerID/${editId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json"
@@ -31,7 +31,7 @@ function App() {
         body: JSON.stringify(customer)
       });
     } else {
-      await fetch("/data-api/Customer", {
+      await fetch("/data-api/api/Customer", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -58,7 +58,7 @@ function App() {
   const deleteCustomer = async id => {
     if (!window.confirm("Delete customer?")) return;
 
-    await fetch(`/data-api/Customer/CustomerID/${id}`, {
+    await fetch(`/data-api/api/Customer/CustomerID/${id}`, {
       method: "DELETE"
     });
 
