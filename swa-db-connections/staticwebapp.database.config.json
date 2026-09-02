@@ -7,7 +7,7 @@
   "runtime": {
     "rest": {
       "enabled": true,
-      "path": "/api"
+      "path": "/data-api"
     },
     "host": {
       "mode": "development"
