@@ -1,0 +1,34 @@
+{
+  "$schema": "https://github.com/Azure/data-api-builder/releases/latest/download/dab.draft.schema.json",
+  "data-source": {
+    "database-type": "mssql",
+    "connection-string": "@env('DATABASE_CONNECTION_STRING')"
+  },
+  "runtime": {
+    "rest": {
+      "enabled": true,
+      "path": "/api"
+    },
+    "host": {
+      "mode": "development"
+    }
+  },
+  "entities": {
+    "Customer": {
+      "source": {
+        "object": "dbo.Customer",
+        "type": "table"
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "*"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
