@@ -31,7 +31,7 @@
           "role": "anonymous",
           "actions": [
             {
-              "action": "*"
+              "action": ["read"]            
             }
           ]
         }
