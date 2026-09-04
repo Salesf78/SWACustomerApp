@@ -11,14 +11,14 @@
     },
     "host": {
       "mode": "development"
-    }
+    },
     "cors": {
         "origins": [],
         "allow-credentials": false
     },
     "authentication": {
         "provider": "StaticWebApps"
-    }
+    },
   },
   "entities": {
     "Customer": {
