@@ -7,7 +7,10 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "dab": "dab start -c swa-db-connections/staticwebapp.database.config.json",
+    "swa": "swa start http://localhost:5173 --api-devserver-url http://localhost:5000",
+    "dev:all": "concurrently \"npm run dev\" \"npm run dab\" \"npm run swa\""
   },
   "dependencies": {
     "react": "^19.2.8",
