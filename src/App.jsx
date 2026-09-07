@@ -12,7 +12,7 @@ function App() {
   const [editId, setEditId] = useState(null);
 
   const loadCustomers = () => {
-    fetch("/data-api/api/Customer")
+    fetch("/data-api/dabapi/Customer")
       .then(r => r.json())
       .then(data => setCustomers(data.value || []));
   };
@@ -23,15 +23,15 @@ function App() {
 
   const saveCustomer = async () => {
     if (editId) {
-      await fetch(`/data-api/api/Customer/CustomerID/${editId}`, {
-        method: "PUT",
+      await fetch(`/data-api/dabapi/Customer/CustomerID/${editId}`, {
+        method: "PATCH",
         headers: {
           "Content-Type": "application/json"
         },
         body: JSON.stringify(customer)
       });
     } else {
-      await fetch("/data-api/api/Customer", {
+      await fetch("/data-api/dabapi/Customer", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -58,7 +58,7 @@ function App() {
   const deleteCustomer = async id => {
     if (!window.confirm("Delete customer?")) return;
 
-    await fetch(`/data-api/api/Customer/CustomerID/${id}`, {
+    await fetch(`/data-api/dabapi/Customer/CustomerID/${id}`, {
       method: "DELETE"
     });
 
