@@ -17,7 +17,7 @@
       }
     },
     "authentication": {
-      "provider": "None"
+      "provider": "{env:DAB_AUTH_PROVIDER}"
     }
   },
   "entities": {
