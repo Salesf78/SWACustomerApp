@@ -1,0 +1,12 @@
+{
+  "$schema": "https://aka.ms/azure/static-web-apps-cli/schema",
+  "configurations": {
+    "customer-app": {
+      "appLocation": ".",
+      "outputLocation": "dist",
+      "appDevserverUrl": "http://localhost:5173",
+      "_XdataApiLocation": "swa-db-connections", 
+      "devMode": true
+    }
+  }
+}
