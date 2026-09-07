@@ -7,17 +7,17 @@
   "runtime": {
     "rest": {
       "enabled": true,
-      "path": "/api"
+      "path": "/dabapi"
     },
     "host": {
-      "mode": "production",
+      "mode": "Development",
       "cors": {
         "origins": [],
         "allow-credentials": false
       }
     },
     "authentication": {
-      "provider": "StaticWebApps"
+      "provider": "None"
     }
   },
   "entities": {
