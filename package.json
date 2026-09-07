@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "dab": "set DAB_AUTH_PROVIDER=None&& dab start -c swa-db-connections/staticwebapp.database.config.json",
+    "dab": "set DATABASE_CONNECTION_STRING=\"Server=sqlserverjaps.database.windows.net,1433;Initial Catalog=GeneralDB;Persist Security Info=False;User ID=appuser;Password=Test!123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=60;\"&& set DAB_AUTH_PROVIDER=None&& dab start -c swa-db-connections/staticwebapp.database.config.json",
     "swa": "swa start http://localhost:5173 --data-api-location swa-db-connections",
     "dev:all": "concurrently \"npm run dev\" \"npm run dab\" \"npm run swa\""
   },
