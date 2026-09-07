@@ -32,6 +32,7 @@ jobs:
           api_location: "" # Api source code path - optional, Leave blank if no Azure Functions
           data_api_location: "swa-db-connections" # Correct property for DAB configs
           output_location: "dist" # Built app content directory - optional
+          env: DAB_AUTH_PROVIDER: StaticWebApps
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
