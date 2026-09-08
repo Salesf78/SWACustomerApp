@@ -28,7 +28,7 @@ jobs:
           action: "upload"
           ###### Repository/Build Configurations ######
           app_location: "/src" # App source code path
-          api_location: "api" # Api source code path - optional, Leave blank if no Azure Functions
+          api_location: "" # Api source code path - optional, Leave blank if no Azure Functions
           data_api_location: "swa-db-connections" # Correct property for DAB configs
           output_location: "dist" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
