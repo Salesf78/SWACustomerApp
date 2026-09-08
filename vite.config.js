@@ -11,7 +11,7 @@ export default defineConfig({
         target: 'http://localhost:5000',
         changeOrigin: true,
         // 2. Strip out "/data-api" so port 5000 gets exactly what it wants
-        rewrite: (path) => path.replace(/^\/data-api/, '') 
+        // rewrite: (path) => path.replace(/^\/data-api/, '') 
       }
     }
   }
