@@ -57,24 +57,30 @@ jobs:
     name: Deploy Backend to Standalone Function
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node.js Environment
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '20' # Matches the Node version of your cloud app
+          node-version: '20'
 
+      # 🔑 Authenticators: Logs in directly using your newly saved JSON secret token
+      - name: Log in to Azure
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      # 📦 Prepares the application files
       - name: Install API Dependencies
         run: |
           cd api
           npm install
 
+      # 🚀 Publishes the directory to your standalone Flex Consumption instance
       - name: Deploy to Azure Function App
         uses: Azure/functions-action@v1
         with:
-          app-name: 'CustomerApp' # The exact name of your standalone function in Azure
+          app-name: 'CustomerApp'
           package: './api'
-          publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
-          # ─── ADD THESE TWO LINES FOR FLEX CONSUMPTION COMPLIANCE ───
           sku: 'flexconsumption'
           remote-build: true
