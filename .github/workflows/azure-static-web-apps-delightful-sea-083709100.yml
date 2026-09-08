@@ -28,15 +28,15 @@ jobs:
           action: "upload"
           ###### Repository/Build Configurations ######
           app_location: "/" # App source code path
-          api_location: "api" # Api source code path - optional, Leave blank if no Azure Functions
+          api_location: "" # Api source code path - optional, Leave blank if no Azure Functions
           # data_api_location: "swa-db-connections" # Correct property for DAB configs
           output_location: "dist" # Built app content directory - optional
-          skip_api_build: true       # ✅ CRUCIAL: Bypasses the native SWA builder so your standalone BYO App handles execution
+          # skip_api_build: true       # ✅ CRUCIAL: Bypasses the native SWA builder so your standalone BYO App handles execution
           ###### End of Repository/Build Configurations ######
         
         # ✅ FIXED: Moved out of the "with" block and indented correctly
-        env: 
-          DAB_AUTH_PROVIDER: StaticWebApps
+        # env: 
+        #  DAB_AUTH_PROVIDER: StaticWebApps
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
