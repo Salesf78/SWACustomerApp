@@ -12,7 +12,7 @@
     "host": {
       "mode": "Development",
       "cors": {
-        "origins": [],
+        "origins": ["http://localhost:4280"],
         "allow-credentials": false
       }
     },
@@ -29,7 +29,7 @@
       "permissions": [
         {
           "role": "anonymous",
-          "actions": ["*"]
+          "actions": ["create", "read", "update", "delete"]
         }
       ]
     }
