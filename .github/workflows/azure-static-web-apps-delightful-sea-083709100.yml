@@ -75,3 +75,6 @@ jobs:
           app-name: 'CustomerApp' # The exact name of your standalone function in Azure
           package: './api'
           publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
+          # ─── ADD THESE TWO LINES FOR FLEX CONSUMPTION COMPLIANCE ───
+          sku: 'flexconsumption'
+          remote-build: true
